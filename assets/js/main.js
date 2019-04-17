@@ -1,5 +1,5 @@
 $(document).ready(function () {
-<<<<<<< HEAD
+//<<<<<<< HEAD
   let latitude = ''; // this changes with each step in the app (initial ip geolocation, then dining, then event)
   let longitude = ''; // this changes with each step in the app (initial ip geolocation, then dining, then event)
   let city = ''; // swap variable name for whatever we end up using
@@ -48,7 +48,7 @@ $(document).ready(function () {
       classifications = classifications + newClassification;
       console.log(newClassification);
     };
-=======
+//=======
     let latitude = ''; // this changes with each step in the app (initial ip geolocation, then dining, then event)
     let longitude = ''; // this changes with each step in the app (initial ip geolocation, then dining, then event)
     let city = '';
@@ -194,7 +194,7 @@ $(document).ready(function () {
             console.log(response.businesses[0].alias)
         });
         // ==================== END Events API Call ====================
->>>>>>> 19620c99b5c9e3062946fc94802946d45ab9efb5
+//>>>>>>> 19620c99b5c9e3062946fc94802946d45ab9efb5
 
     // below prevents the events from failing by searching for all events if params is empoty
     if (params.length === 0) {
