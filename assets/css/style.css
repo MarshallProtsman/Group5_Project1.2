@@ -79,15 +79,29 @@ body {
    color: grey;
 }
 
+.waves-effect {
+    
+}
+
 .btn-events {
-    background: yellow;
+    /* background: none; */
     transition: .5s;
 }
 
-.btn-events-active {
+/* .btn-events-active {
     background: orangered;
+} */
+
+/* .btn-events:focus {
+    background: orangered;
+} */
+
+#eventsList {
+    
 }
 
-.btn-events:focus {
-    background: orangered;
+.eventCard {
+    font-size: 1em;
+    margin: .2em;
+    
 }
