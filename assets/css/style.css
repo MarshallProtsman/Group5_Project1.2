@@ -26,9 +26,9 @@ body {
     opacity: 1;
 } 
 
-#content {
+/* #content {
     
-}
+} */
 
 /* #splashScreen {
     height: 100%;
@@ -123,6 +123,7 @@ body {
 
 .eventCard {
     font-size: 1em;
-    margin: .2em;
+    padding: 2em 0 2em 0;
+    height: 6em;
     
 }

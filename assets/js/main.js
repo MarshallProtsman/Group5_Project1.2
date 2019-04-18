@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  let cityList = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuquerque", "Alexandria", "Allentown", "Amarillo", "Anaheim", "Anchorage", "Ann Arbor", "Antioch", "Apple Valley", "Appleton", "Arlington", "Arvada", "Asheville", "Athens", "Atlanta", "Atlantic City", "Augusta", "Aurora", "Austin", "Bakersfield", "Baltimore", "Barnstable", "Baton Rouge", "Beaumont", "Bel Air", "Bellevue", "Berkeley", "Bethlehem", "Billings", "Birmingham", "Bloomington", "Boise", "Boise City", "Bonita Springs", "Boston", "Boulder", "Bradenton", "Bremerton", "Bridgeport", "Brighton", "Brownsville", "Bryan", "Buffalo", "Burbank", "Burlington", "Cambridge", "Canton", "Cape Coral", "Carrollton", "Cary", "Cathedral City", "Cedar Rapids", "Champaign", "Chandler", "Charleston", "Charlotte", "Chattanooga", "Chesapeake", "Chicago", "Chula Vista", "Cincinnati", "Clarke County", "Clarksville", "Clearwater", "Cleveland", "College Station", "Colorado Springs", "Columbia", "Columbus", "Concord", "Coral Springs", "Corona", "Corpus Christi", "Costa Mesa", "Dallas", "Daly City", "Danbury", "Davenport", "Davidson County", "Dayton", "Daytona Beach", "Deltona", "Denton", "Denver", "Des Moines", "Detroit", "Downey", "Duluth", "Durham", "El Monte", "El Paso", "Elizabeth", "Elk Grove", "Elkhart", "Erie", "Escondido", "Eugene", "Evansville", "Fairfield", "Fargo", "Fayetteville", "Fitchburg", "Flint", "Fontana", "Fort Collins", "Fort Lauderdale", "Fort Smith", "Fort Walton Beach", "Fort Wayne", "Fort Worth", "Frederick", "Fremont", "Fresno", "Fullerton", "Gainesville", "Garden Grove", "Garland", "Gastonia", "Gilbert", "Glendale", "Grand Prairie", "Grand Rapids", "Grayslake", "Green Bay", "GreenBay", "Greensboro", "Greenville", "Gulfport-Biloxi", "Hagerstown", "Hampton", "Harlingen", "Harrisburg", "Hartford", "Havre de Grace", "Hayward", "Hemet", "Henderson", "Hesperia", "Hialeah", "Hickory", "High Point", "Hollywood", "Honolulu", "Houma", "Houston", "Howell", "Huntington", "Huntington Beach", "Huntsville", "Independence", "Indianapolis", "Inglewood", "Irvine", "Irving", "Jackson", "Jacksonville", "Jefferson", "Jersey City", "Johnson City", "Joliet", "Kailua", "Kalamazoo", "Kaneohe", "Kansas City", "Kennewick", "Kenosha", "Killeen", "Kissimmee", "Knoxville", "Lacey", "Lafayette", "Lake Charles", "Lakeland", "Lakewood", "Lancaster", "Lansing", "Laredo", "Las Cruces", "Las Vegas", "Layton", "Leominster", "Lewisville", "Lexington", "Lincoln", "Little Rock", "Long Beach", "Lorain", "Los Angeles", "Louisville", "Lowell", "Lubbock", "Macon", "Madison", "Manchester", "Marina", "Marysville", "McAllen", "McHenry", "Medford", "Melbourne", "Memphis", "Merced", "Mesa", "Mesquite", "Miami", "Milwaukee", "Minneapolis", "Miramar", "Mission Viejo", "Mobile", "Modesto", "Monroe", "Monterey", "Montgomery", "Moreno Valley", "Murfreesboro", "Murrieta", "Muskegon", "Myrtle Beach", "Naperville", "Naples", "Nashua", "Nashville", "New Bedford", "New Haven", "New London", "New Orleans", "New York", "New York City", "Newark", "Newburgh", "Newport News", "Norfolk", "Normal", "Norman", "North Charleston", "North Las Vegas", "North Port", "Norwalk", "Norwich", "Oakland", "Ocala", "Oceanside", "Odessa", "Ogden", "Oklahoma City", "Olathe", "Olympia", "Omaha", "Ontario", "Orange", "Orem", "Orlando", "Overland Park", "Oxnard", "Palm Bay", "Palm Springs", "Palmdale", "Panama City", "Pasadena", "Paterson", "Pembroke Pines", "Pensacola", "Peoria", "Philadelphia", "Phoenix", "Pittsburgh", "Plano", "Pomona", "Pompano Beach", "Port Arthur", "Port Orange", "Port Saint Lucie", "Port St. Lucie", "Portland", "Portsmouth", "Poughkeepsie", "Providence", "Provo", "Pueblo", "Punta Gorda", "Racine", "Raleigh", "Rancho Cucamonga", "Reading", "Redding", "Reno", "Richland", "Richmond", "Richmond County", "Riverside", "Roanoke", "Rochester", "Rockford", "Roseville", "Round Lake Beach", "Sacramento", "Saginaw", "Saint Louis", "Saint Paul", "Saint Petersburg", "Salem", "Salinas", "Salt Lake City", "San Antonio", "San Bernardino", "San Buenaventura", "San Diego", "San Francisco", "San Jose", "Santa Ana", "Santa Barbara", "Santa Clara", "Santa Clarita", "Santa Cruz", "Santa Maria", "Santa Rosa", "Sarasota", "Savannah", "Scottsdale", "Scranton", "Seaside", "Seattle", "Sebastian", "Shreveport", "Simi Valley", "Sioux City", "Sioux Falls", "South Bend", "South Lyon", "Spartanburg", "Spokane", "Springdale", "Springfield", "St. Louis", "St. Paul", "St. Petersburg", "Stamford", "Sterling Heights", "Stockton", "Sunnyvale", "Syracuse", "Tacoma", "Tallahassee", "Tampa", "Temecula", "Tempe", "Thornton", "Thousand Oaks", "Toledo", "Topeka", "Torrance", "Trenton", "Tucson", "Tulsa", "Tuscaloosa", "Tyler", "Utica", "Vallejo", "Vancouver", "Vero Beach", "Victorville", "Virginia Beach", "Visalia", "Waco", "Warren", "Washington", "Waterbury", "Waterloo", "West Covina", "West Valley City", "Westminster", "Wichita", "Wilmington", "Winston", "Winter Haven", "Worcester", "Yakima", "Yonkers", "York", "Youngstown"];
+
   let latitude = ''; // this changes with each step in the app (initial ip geolocation, then dining, then event)
   let longitude = ''; // this changes with each step in the app (initial ip geolocation, then dining, then event)
   let city = ''; // swap variable name for whatever we end up using
@@ -95,8 +97,8 @@ $(document).ready(function () {
 
         // ===== Begin Event Item core data (main data like name, date, etc.) =====
         let event = response._embedded.events[i].name; // get event name
-        let eventItem = $('<div>');
-        eventItem.addClass('col l3 m12 s12');
+        let eventItem = $('<button>');
+        eventItem.addClass('col s12 l3');
         // eventItem.addClass('waves-effect waves-light btn');
         eventItem.addClass('eventCard');
         eventItem.text(event);
@@ -104,8 +106,8 @@ $(document).ready(function () {
         // ===== End Event Item core data (main data like name, date, etc.) =====
 
         // ===== Begin Event Details core data (extra data for modals) =====
-       // let image = response._embedded.events[i].images[5].url; // get event img 
-       // let imageEvent = $('<img>');
+        // let image = response._embedded.events[i].images[5].url; // get event img 
+        // let imageEvent = $('<img>');
         // imageEvent.attr('src', image);
         // imageEvent.addClass('image');
         // $('#eventsList').append(imageEvent); // this may be swapped (we may not need images) or added to a seperate element that popualates on event details modal
@@ -202,15 +204,34 @@ $(document).ready(function () {
     let paramIndex = params.indexOf(param); // gets index position of this event param
     if ($(this).hasClass('btn-events-active')) { // checks to see if added
       $(this).removeClass('btn-events-active'); // removes if in params array
-      $(this).css('background','#26a69a');
+      $(this).css('background', '#26a69a');
       params.splice(paramIndex, 1);
     } else {
       $(this).addClass('btn-events-active'); // adds active class to this
-      $(this).css('background','red');
+      $(this).css('background', 'red');
       params.push($(this).text()) // adds to params array
     };
     console.log('events params: ' + params);  // TEST Code
   });
+
+
+
+  $('#locationUpdate').on('click', function () {
+    cityCheck = $('#cityNew').val();
+    cityCheck = cityCheck.charAt(0).toUpperCase() + cityCheck.slice(1);
+    console.log(cityCheck);
+    if (cityList.indexOf(cityCheck) === -1) {
+      console.log('invalid city');
+      
+    } else {
+      city = cityCheck // not right
+    }
+
+      
+    console.log(city);
+    // $('#cityForm').css('display', 'none');
+    $('#city').text('It looks like you are in ' + city + '.  Is this correct?');
+  })
 
   yelp();
   /* ----------------------------------------------------------------------------------- */
@@ -221,6 +242,12 @@ $(document).ready(function () {
   // =============== BEGIN COMMON FUNCTIONS (TRANSITIONS) ===============
   // ----- use this space to define things that can be recycled, like transitions 
   // =============== END COMMON FUNCTIONS (TRANSITIONS) ===============
+
+
+
+  // us city validation
+  // javascript, coffeescript, jquery...
+
 });
 
 

@@ -45,9 +45,12 @@
                 <button id="locationNo" class="waves-effect waves-light btn">no</button>
                 <!-- if no, input the city by user -->
                 <div class="input-field" id="cityForm" style="display: none">
-                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                    <label for="your_city">Optional Your City</label>
-                    <button id="locationYes" class="waves-effect waves-light btn">oops... nevermind</button>
+                    <input id="cityNew" placeholder="Which City are you interested in?" type="text">
+                    <label for="cityForm">Update My City</label>
+                    
+                    
+                    <button id="locationUpdate" class="waves-effect waves-light btn">update city</button>
+                    <button id="locationClose" class="waves-effect waves-light btn">oops... nevermind</button>
                 </div>
             </div>
         </div>
@@ -68,8 +71,8 @@
             <div style="margin-top: 2em"><button id="eventSearch" class="waves-effect waves-light btn">Go</button></div>
         </div>
         <!-- show us the events -->
-        <div class="testContainer container-fluid" style="padding: 0;">
-            <div id="eventsList" class="row" style="margin: auto; width: 100%; background: lightgreen">
+        <div class="testContainer container-fluid" style="padding: 0; text-align: center">
+            <div id="eventsList" class="row" style="margin: auto;  background: lightgreen">
                 <!-- show events here -->
             </div>
         </div>
@@ -139,6 +142,8 @@
         $(document).ready(function () {
             $('.modal').modal();
         });
+
+        
     </script>
 </body>
 
