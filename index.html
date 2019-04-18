@@ -17,46 +17,25 @@
 </head>
 
 <body>
-
-    <section id="content">
-        <!-- content rendered dynamically here -->
-    </section>
-
-    <section>
-        <div class="container-fluid">
-            <div id="splash" class="row">
-                <div class="col s12 yourdiv test2">
-                    <button id="start" class="btn-floating btn-large pulse"><i class="fas fa-heart"></i></button>
-                    <div>Let's plan your awesome date</div>
+    <!-- view_1 - start screen -->
+    <section id="view_1" style="height: 100vh; margin-top: 0; color: white">
+     
+                <div class="container-fluid">
+                    <div class="row">
+                        <h1>Shrug</h1>
+                        <h4>Date Planning for the Indecisive</h4>
+                    </div>
+                    <div id="splash" class="row">
+                        <div class="col s12 yourdiv">
+                            <button id="start" class="btn-floating btn-large pulse"><i class="fas fa-heart"></i></button>
+                            <div>Let's plan your awesome date.  Tap the heart to get started.</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
     </section>
 
-
-    <section>
-
-        <!-- just some neat placeholder buttons to test 
-        <div class="row iconRow" id="menu1">
-            <div class="col s4 l4 icons">
-                <button id="dining"
-                    class="btn-floating btn-large waves-effect waves-light menu1-btn scale-transition scale-out"> <i
-                        class="fas fa-utensils"></i>
-                </button>
-            </div>
-            <div class="col s4 l4 icons">
-                <button id="movie"
-                    class="btn-floating btn-large waves-effect waves-light menu1-btn scale-transition scale-out"> <i
-                        class="fas fa-film"></i> </button>
-            </div>
-            <div class="col s4 l4  icons">
-                <button id="event"
-                    class="btn-floating btn-large waves-effect waves-light menu1-btn scale-transition scale-out"> <i
-                        class="fas fa-ticket-alt"></i>
-                </button>
-            </div>
-        </div> -->
-
+    <!-- view_2 - events search screen -->
+    <section id="view_2">
         <!-- here is our city with optional user input -->
         <div class="testContainer">
             <h5 id="city">hello cleveland!</h5>
@@ -86,9 +65,7 @@
                 <button class="btn-events waves-effect waves-light btn">sports</button>
             </div>
             <!-- submit button -->
-
             <div style="margin-top: 2em"><button id="eventSearch" class="waves-effect waves-light btn">Go</button></div>
-
         </div>
         <!-- show us the events -->
         <div class="testContainer container-fluid" style="padding: 0;">
@@ -96,6 +73,11 @@
                 <!-- show events here -->
             </div>
         </div>
+    </section>
+
+    <!-- view_3 - restaurants search screen -->
+    <section id="view_3">
+
     </section>
 
     <div class="overlay">
@@ -123,6 +105,28 @@
         </div>
     </div>
 
+
+
+      <!-- just some neat placeholder buttons to test 
+        <div class="row iconRow" id="menu1">
+            <div class="col s4 l4 icons">
+                <button id="dining"
+                    class="btn-floating btn-large waves-effect waves-light menu1-btn scale-transition scale-out"> <i
+                        class="fas fa-utensils"></i>
+                </button>
+            </div>
+            <div class="col s4 l4 icons">
+                <button id="movie"
+                    class="btn-floating btn-large waves-effect waves-light menu1-btn scale-transition scale-out"> <i
+                        class="fas fa-film"></i> </button>
+            </div>
+            <div class="col s4 l4  icons">
+                <button id="event"
+                    class="btn-floating btn-large waves-effect waves-light menu1-btn scale-transition scale-out"> <i
+                        class="fas fa-ticket-alt"></i>
+                </button>
+            </div>
+        </div> -->
 
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

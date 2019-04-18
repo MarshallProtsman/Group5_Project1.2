@@ -5,6 +5,27 @@ $(document).ready(function () {
   let APIResponse = false; // check for api success (re-use as needed)
   let params = []; // array to hold event parameters (needs to be accessed by click event listener and api call - hence global scope)
   let loaderText = '';
+  let event = {
+    name: '',
+    date: '',
+    venue: '',
+    price: '',
+    url: '',
+    // etc....
+  };
+  let restaurant = {
+    name: '', // response.businesses[i].name
+    price: '', // response.businesses[i].price
+    url: '', // response.businesses[i].url
+    rating: '', // response.businesses[i].rating
+    ratingCount: '', // response.businesses[i].review_count
+    address: '', // response.businesses[i].location.display_address[a]
+    transactions: '', // response.businesses[i].transactions[a]
+    phone: '', // response.businesses[i].phone
+    categories: '', // response.businesses[i].categories[a]
+    imageURL: '', // response.businesses[i].image_url
+    // etc.
+  }
 
   /* ----------------------------------------------------------------------------------- */
   // --------------------------------- BEGIN API CALLs --------------------------------- //
@@ -74,20 +95,20 @@ $(document).ready(function () {
 
         // ===== Begin Event Item core data (main data like name, date, etc.) =====
         let event = response._embedded.events[i].name; // get event name
-        let eventItem = $('<button>');
+        let eventItem = $('<div>');
         eventItem.addClass('col l3 m12 s12');
-        eventItem.addClass('waves-effect waves-light btn');
+        // eventItem.addClass('waves-effect waves-light btn');
         eventItem.addClass('eventCard');
         eventItem.text(event);
         $('#eventsList').append(eventItem);
         // ===== End Event Item core data (main data like name, date, etc.) =====
 
         // ===== Begin Event Details core data (extra data for modals) =====
-        let image = response._embedded.events[i].images[5].url; // get event img 
-        let imageEvent = $('<img>');
+       // let image = response._embedded.events[i].images[5].url; // get event img 
+       // let imageEvent = $('<img>');
         // imageEvent.attr('src', image);
         // imageEvent.addClass('image');
-        $('#eventsList').append(imageEvent); // this may be swapped (we may not need images) or added to a seperate element that popualates on event details modal
+        // $('#eventsList').append(imageEvent); // this may be swapped (we may not need images) or added to a seperate element that popualates on event details modal
         // ===== End Event Details core data (extra data for modals) =====
       } // ===== End Event List Rendering =====
     }); // ===== End ajax .then actions
@@ -136,7 +157,6 @@ $(document).ready(function () {
 
   // ==================== BEGIN - CLICK EVENT - start app - populate ip-based geo location ====================
   $('#start').on('click', function () {
-
     // $('.overlay').removeClass('hidden'); // TEST CODE
     callAPIGeo(); // gets the initial geolocation data for the user
     if (APIResponse === true) {
