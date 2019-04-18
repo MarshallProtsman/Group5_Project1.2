@@ -1,11 +1,36 @@
 $(document).ready(function () {
-//<<<<<<< HEAD
   let latitude = ''; // this changes with each step in the app (initial ip geolocation, then dining, then event)
   let longitude = ''; // this changes with each step in the app (initial ip geolocation, then dining, then event)
   let city = ''; // swap variable name for whatever we end up using
   let APIResponse = false; // check for api success (re-use as needed)
   let params = []; // array to hold event parameters (needs to be accessed by click event listener and api call - hence global scope)
   let loaderText = '';
+  /* ----------------------------------------------------------------------------------- */
+  /* -------------------------------Date Picker----------------------------------------- */
+  /* ----------------------------------------------------------------------------------- */
+let ourDate = '';
+  // document.addEventListener('DOMContentLoaded', function() {
+  //   var elems = document.querySelectorAll('.datepicker');
+  //   var instances = M.Datepicker.init(elems, options);
+  // });
+  // Or with jQuery
+  $('.datepicker').datepicker({
+    disableWeekends: true,
+    onClose: function() {
+      console.log(date.value);
+      window.ourDate = date.value;;
+    },
+  });
+
+
+
+console.log(ourDate);
+
+
+  /* ----------------------------------------------------------------------------------- */
+  /* -----------------------------End Date Picker--------------------------------------- */
+  /* ----------------------------------------------------------------------------------- */
+
 
   /* ----------------------------------------------------------------------------------- */
   // --------------------------------- BEGIN API CALLs --------------------------------- //
@@ -29,6 +54,8 @@ $(document).ready(function () {
       city = response.city; // sets city - swap for whatever location data we end up using - change variable name!!!!
       // console.log('User latitude is ' + latitude); // tell us the lat // TEST CODE
       //  console.log('User longitude is ' + longitude); // tell us the long // TEST CODE
+      yelpLatitude = response.latitude
+      yelpLongitude = response.longitude
       console.log('You are in ' + city); // TEST CODE
       $('#city').text('It looks like you are in ' + city + '.  Is this correct?'); // populates the text for location (depends on APIResponse === true)
     });
@@ -254,11 +281,13 @@ $(document).ready(function () {
   let yelp = function () {
     let category = "pizza";
     let location = "30308";
+    let yelpLatitude = ""
+    let yelpLongitude = ""
     let price = "2";
     const radius = "1000";
     let yelpApiKey = "4YFPvbnRG_3T1cP_B2tCpTFPpKnV2tgIvSmz926QynUmbZFl_y3eNsVBWjZLTNqx8y5Lth__B95rWD5_-iU0BF4Mpk9Dqz7LhB8gOq-ekL0guI0Wm1MQHX4jSUK2XHYx";
 
-    let yelpQueryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${category}&location=${location}&price=${price}&radius=${radius}`;
+    let yelpQueryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${category}&location=${location}&latitude=${yelpLatitude}&longitude=${yelpLongitude}&price=${price}&radius=${radius}`;
     console.log(yelpQueryURL)
 
     $.ajax({
@@ -273,7 +302,7 @@ $(document).ready(function () {
       console.log(response.businesses[0].alias)
     });
   }
-
+yelp()
   
   // ==================== END Yelp API Call ====================
 
