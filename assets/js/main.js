@@ -15,11 +15,12 @@ let ourDate = '';
   // });
   // Or with jQuery
   $('.datepicker').datepicker({
-    disableWeekends: true,
+    format: 'yyyy-mm-dd',
     onClose: function() {
       console.log(date.value);
-      window.ourDate = date.value;;
+      window.ourDate = date.value;
     },
+
   });
 
 
@@ -188,10 +189,7 @@ console.log(ourDate);
                 eventItem.text(event);
                 $('#eventsList').append(eventItem);
                 $('#eventsList').append(imageEvent);
-         
-
-            
-        
+                
                 // ===== End Event Item core data (main data like name, date, etc.) =====
 
                 // ===== Begin Event Details core data (extra data for modals) =====
@@ -243,11 +241,12 @@ console.log(ourDate);
     // need a loop to add params based on user selection into query url - easy fix :)
     // ===== TESTING CODE =====
 
-    let queryURL = url + city + '&keyword=' + classifications + 'apikey=' + key; // city pulled from geolocatin API call (this could be moved to be called on load for efficeincy instead of tied to a click event)
+    let queryURL = url + city + '&keyword=' + classifications + 'apikey=' + key + '&startDateTime=2019-05-01T10:00:00Z&endDateTime=2019-05-02T10:00:00Z'; // city pulled from geolocatin API call (this could be moved to be called on load for efficeincy instead of tied to a click event)
+   //let queryURL = url + city + '&keyword=' + classifications + 'apikey=' + key + '&startDateTime='+ ourDate +'T10:00:00Z'+ '&endDateTime=' + ourDate + 'T10:00:00Z';
     $.ajax({
       url: queryURL,
       method: "GET",
-      // dataType: 'jsonp', // optional - needed to work around a CORS warning/error
+       dataType: 'json', // optional - needed to work around a CORS warning/error
     }).then(function (response) {
       console.log(response); // returns the initial ip address geolocation data // TEST CODE 
       $('#eventsList').empty();
