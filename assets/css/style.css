@@ -6,62 +6,94 @@ html {
 body {
     text-align: center;
     margin-top: 0;
+    height: 100vh;
+    /* font options */
+    /* font-family: 'Pacifico', cursive; */
+    /* font-family: 'Varela Round', sans-serif; */
+    font-family: 'Thasadith', sans-serif;
+    /* font-family: 'Quicksand', sans-serif; */
+}
+
+h1 {
+    font-size: 8em;
+    font-family: 'Pacifico', cursive;
+}
+
+.view {
+    min-height: 100vh;
+}
+
+.vh100 {
+    padding: 15% 0 0 0;
+    min-height: 100vh;
+}
+
+#v1 {
+    color: white;
     background-image: url(/assets/img/nataniel-susantoputra-377254-unsplash.jpg);
     background-size: cover;
-    height: 100vh;
     background-position: right;
     background-repeat: no-repeat;
 }
 
- .hidden {
+#v2 {
+    transition: ease-in;
+    transition-duration: .3s;
+    transition-delay: .5s;
+}
+
+#v3 {
+    padding: 5% 0 0 0;
+    opacity: 0.2;
+    transition: ease-in;
+    transition-duration: .3s;
+    transition-delay: .5s;
+}
+
+
+#tagLine {
+    margin: 1em 0 0 0;
+}
+
+#btn-start {
+    background: lightcoral;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 1em;
+}
+
+#city-name {
+    padding: 0 0 2.5em 0;
+}
+
+#city-opt2 {
+    margin: -4em 0 0 0;
+}
+
+#city-input {
+    max-width: 500px;
+    font-size: 1.5em;
+    color: lightcoral;
+}
+
+.hidden {
     display: none;
     opacity: 0;
 }
 
-.displayNone {
+.display-none {
     display: none;
 }
 
 .visible {
     opacity: 1;
-} 
-
-/* #content {
-    
-} */
-
-/* #splashScreen {
-    height: 100%;
-    background: black;
-} */
-
-/* .icons {
-    /* height: 10em; */
-    
-/* } */ 
+}
 
 .btn-large {
     margin: 4em 0 2em 0;
-}
-
-.test1 {
-    background: teal;
-    color: whitesmoke;
-}
-
-.test2 {
-    background: lightskyblue;
-    color: black;
-}
-
-.test3 {
-    background: lightcoral;
-    color: whitesmoke;
-}
-
-#splash {
-    transition: 1s;
-   
 }
 
 #menu1 {
@@ -73,7 +105,7 @@ body {
 }
 
 .testContainer {
-    background: grey;
+
     padding: 5%;
     margin: 1em;
 }
@@ -90,28 +122,24 @@ body {
     position: fixed;
     top: 0;
     background: white;
-    display:none;
+    display: none;
     transition: 1s;
     transition-delay: .5s;
     opacity: 0;
 }
 
 .loader {
-   color: grey;
+    color: lightcoral;
 }
-
-/* .waves-effect {
-    
-} */
 
 .btn-events {
     /* background: none; */
     transition: .5s;
 }
 
-/* .btn-events-active {
-    background: orangered;
-} */
+.btn-events-active {
+    background: lightcoral;
+}
 
 /* .btn-events:focus {
     background: orangered;
@@ -123,7 +151,17 @@ body {
 
 .eventCard {
     font-size: 1em;
-    padding: 2em 0 2em 0;
-    height: 6em;
-    
+    margin: 1em 0 1em 0;
+    padding: 1em 0 1em 0;
+    height: 4em;
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    transition: .4s;
+
+}
+
+.eventCard:hover {
+    color: white;
+    background: black;
 }

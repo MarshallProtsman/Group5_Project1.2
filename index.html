@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- magic css animations  -->
     <link rel="stylesheet" href="assets/css/magic/magic.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Thasadith|Varela+Round" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,99 +20,113 @@
 
 <body>
     <!-- view_1 - start screen -->
-    <section id="view_1" style="height: 100vh; margin-top: 0; color: white">
-     
-                <div class="container-fluid">
-                    <div class="row">
-                        <h1>Shrug</h1>
-                        <h4>Date Planning for the Indecisive</h4>
-                    </div>
-                    <div id="splash" class="row">
-                        <div class="col s12 yourdiv">
-                            <button id="start" class="btn-floating btn-large pulse"><i class="fas fa-heart"></i></button>
-                            <div>Let's plan your awesome date.  Tap the heart to get started.</div>
-                        </div>
-                    </div>
-                </div>
-    </section>
-
-    <!-- view_2 - events search screen -->
-    <section id="view_2">
-        <!-- here is our city with optional user input -->
-        <div class="testContainer">
-            <h5 id="city">hello cleveland!</h5>
-            <!-- confirm the ity -->
-            <div id="confirm">
-                <button id="locationYes" class="waves-effect waves-light btn">yes</button>
-                <button id="locationNo" class="waves-effect waves-light btn">no</button>
-                <!-- if no, input the city by user -->
-                <div class="input-field" id="cityForm" style="display: none">
-                    <input id="cityNew" placeholder="Which City are you interested in?" type="text">
-                    <label for="cityForm">Update My City</label>
-                    
-                    
-                    <button id="locationUpdate" class="waves-effect waves-light btn">update city</button>
-                    <button id="locationClose" class="waves-effect waves-light btn">oops... nevermind</button>
+    <section id="v1" class="view vh100">
+        <div class="container-fluid">
+            <div class="row">
+                <h1 class="cursive">Shrug</h1>
+                <h3 id="tagLine">Date Planning for the Indecisive</h3>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <button id="btn-start" class="btn-floating btn-large pulse"><i class="fas fa-heart"></i></button>
                 </div>
             </div>
         </div>
+        <div class="col s12 footer">
+            <h5>Let's plan your awesome date. Tap the heart to get started.</h5>
+        </div>
+    </section>
 
-        <!-- some options to set up our tickermaster api call -->
-        <div id="eventsOptions" class="testContainer">
-            <h5>What events are you interested in?</h5>
+    <!-- view 2 - events search screen -->
+    <section id="v2" class="view">
+        <!-- here is our city with optional user input -->
+        <div id="v2-city" class="container-fluid vh100 scale-transition">
+                <div id="city-name">
+            <h1 class="city">Stankonia</h1>
+        </div>
+            <!-- confirm the city -->
+            
+            <div id="city-opt1" class="scale-transition">
+                <button id="btn-city-yes" class="waves-effect waves-light btn">continue</button>
+                <button id="btn-city-no" class="waves-effect waves-light btn">change city</button>
+            </div>
+                <!-- if no, input the city by user -->
+                <div class="row">
+                    <div class="col s3"></div>
+                <div class="input-field scale-transition scale-out col s12" id="city-opt2">
+                    <input id="city-input" placeholder="Which City are you interested in?" type="text">
+                    <div>
+                    <button id="btn-city-change" class="waves-effect waves-light btn">Make the Swap</button>
+                    <button id="btn-city-stay" class="waves-effect waves-light btn">Stay in <span class='city'></span></button>
+                </div>
+                </div>
+            
+                <div class="col s3"></div>
+                <h5 id="city-error" class="footer hidden">Better double check that spelling!  Just major US cities, for now...</h5>
+            </div>
+        </div>
+        
+    </section>
+
+        <section id="v3" class="view">
+            <h1><span class="city"></span> Events</h1>
             <div id="btn-events">
+                <!-- some options to set up our tickermaster api call -->
                 <button class="btn-events waves-effect waves-light btn">music</button>
                 <button class="btn-events waves-effect waves-light btn">theater</button>
-                <button class="btn-events waves-effect waves-light btn">escape rooms</button>
+                <button class="btn-events waves-effect waves-light btn">film</button>
                 <button class="btn-events waves-effect waves-light btn">science</button>
                 <button class="btn-events waves-effect waves-light btn">art</button>
                 <button class="btn-events waves-effect waves-light btn">dance</button>
                 <button class="btn-events waves-effect waves-light btn">sports</button>
+                <button id="eventSearch" class="waves-effect waves-light btn">Go</button>
             </div>
             <!-- submit button -->
-            <div style="margin-top: 2em"><button id="eventSearch" class="waves-effect waves-light btn">Go</button></div>
+            <div style="margin-top: 2em"></div>
         </div>
+        <hr>
         <!-- show us the events -->
         <div class="testContainer container-fluid" style="padding: 0; text-align: center">
-            <div id="eventsList" class="row" style="margin: auto;  background: lightgreen">
+            <div id="eventsList" class="row" style="margin: auto">
                 <!-- show events here -->
             </div>
         </div>
     </section>
 
     <!-- view_3 - restaurants search screen -->
-    <section id="view_3">
-
-    </section>
+    
 
     <div class="overlay">
-        <div class="loader " style="width: 60%; margin: auto; min-width: 200px;">
+            <h4 id="loaderText" class="loader" >Loading something awesome...</h4>
+        <div style="min-width: 200px;">
             <div class="progress">
                 <div class="indeterminate"></div>
             </div>
-            <div id="loaderText">Loading something awesome...</div>
-
+            
         </div>
     </div>
-
-    <!-- Modal Structure -->
-
-    <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
 
     <div id="modal1" class="modal">
         <div class="modal-content">
-            <h4>Event Name</h4>
-            <p>Event Details</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+
+            <div id="eventModal">
+                <h6 id="eventName">Event Name</h6>
+                <img src="" alt="" id="eventIMG" style="width: 60%">
+                <div id="eventVenue">Venue</div>
+                <div id="eventDate">Date</div>
+                <div id="eventAddress">Address</div>
+            </div>
+            <div class="modal-footer">
+                <a id="eventSelect" href="#!" class="modal-close waves-effect waves-green btn-flat">Select Event</a>
+                <a id="tix" href="#!" target="_blank" class="waves-effect waves-green btn-flat">Get Tix</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
         </div>
     </div>
 
 
-
-      <!-- just some neat placeholder buttons to test 
+    <button id="yelp">yelp</button>
+    <!-- just some neat placeholder buttons to test 
         <div class="row iconRow" id="menu1">
             <div class="col s4 l4 icons">
                 <button id="dining"
@@ -138,12 +154,9 @@
 
     <script>
         // Or with jQuery
-
         $(document).ready(function () {
             $('.modal').modal();
         });
-
-        
     </script>
 </body>
 
