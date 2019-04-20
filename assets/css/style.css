@@ -44,10 +44,11 @@ h1 {
 
 #v1 {
     color: white;
-    background-image: url(/assets/img/nataniel-susantoputra-377254-unsplash.jpg);
+    background-image: url(/assets/img/date5.jpg);
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
+    transition: 2s;
 }
 
 #v2 {

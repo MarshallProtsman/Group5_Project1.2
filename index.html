@@ -16,6 +16,8 @@
     <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
 </head>
 
 <body>
@@ -127,15 +129,15 @@
         <h5>Ready for your date? Let's review the details.</h5>
         <hr style="margin: 2em">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col 6">
-                    <h4 class="eventName1">Event Name</h4>
+            <div class="row" style="width: 100%">
+                <div class="col l6">
+                    <h4 id="eventName1">Event Name</h4>
                     <img src="" alt="" id="eventIMG1" style="height: 20em">
                     <div id="eventVenue1">Venue</div>
                     <div id="eventAddress1">Address</div>
                     <div id="eventDate1">Date</div>
                 </div>
-                <div class="col 6">
+                <div class="col l6">
                     <h4 id="restName1">Restaurants</h4>
                     <img src="" alt="" id="restIMG1" style="height: 20em">
                     <div id="restAddress1">Address</div>
@@ -214,15 +216,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/js/main.js"></script>
     <!-- =========== END JAVASCRIPT SRC PATHS ========== -->
-
-    <!-- =========== BEGIN JAVASCRIPT MODAL INITIALIZER ========== -->
-    <script>
-        // Initialize Modals
-        $(document).ready(function () {
-            
-        });
-    </script>
-    <!-- =========== END JAVASCRIPT MODAL INITIALIZER ========== -->
 
     <!-- ########## THAT'S ALL FOLKS! ########## -->
 </body>
