@@ -9,18 +9,17 @@
     <!--Import materialize.css-->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- magic css animations  -->
-    <link rel="stylesheet" href="assets/css/magic/magic.css">
+
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Thasadith|Varela+Round" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="assets/css/hover.css"/>
-    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/hover.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-    <!-- view_1 - start screen -->
+    <!-- ======================  BEGIN VIEW_1 CONTENT - SPLASH =====================  -->
     <section id="v1" class="view vh100">
         <div class="container-fluid">
             <div class="row">
@@ -37,156 +36,195 @@
             <h5>Let's plan your awesome date. Tap the heart to get started.</h5>
         </div>
     </section>
+    <!-- ======================  END VIEW_1 CONTENT - SPLASH =====================  -->
 
-    <!-- view 2 - events search screen -->
+    <!-- ======================  BEGIN VIEW_2 CONTENT - CITY PICKER =====================  -->
     <section id="v2" class="view">
         <!-- here is our city with optional user input -->
         <div id="v2-city" class="container-fluid vh100 scale-transition">
-                <div id="city-name">
-            <h1 class="city">Stankonia</h1>
-        </div>
-            <!-- confirm the city -->
-            
-            <div id="city-opt1" class="scale-transition">
-                <button id="btn-city-yes" class="waves-effect waves-light btn">continue</button>
-                <button id="btn-city-no" class="waves-effect waves-light btn">change city</button>
+            <div id="city-name">
+                <h1 class="city">Stankonia</h1>
+                <h3><span class="city"></span> is a great place to fall in love.</h3>
             </div>
-                <!-- if no, input the city by user -->
-                <div class="row">
-                    <div class="col s3"></div>
+            <!-- confirm the city -->
+            <div id="city-opt1" class="scale-transition">
+                <button id="btn-city-yes" class="waves-effect waves-light btn btn-choice">continue</button>
+                <button id="btn-city-no" class="waves-effect waves-light btn btn-choice">change city</button>
+            </div>
+            <!-- optional change - input the city by user -->
+            <div class="row">
+                <div class="col s3">
+                    <!-- placeholder for spacing -->
+                </div>
                 <div class="input-field scale-transition scale-out col s12" id="city-opt2">
                     <input id="city-input" placeholder="Which City are you interested in?" type="text">
                     <div>
-                    <button id="btn-city-change" class="waves-effect waves-light btn">Make the Swap</button>
-                    <button id="btn-city-stay" class="waves-effect waves-light btn">Stay in <span class='city'></span></button>
+                        <button id="btn-city-change" class="waves-effect waves-light btn btn-choice">Update
+                            City</button>
+                        <button id="btn-city-stay" class="waves-effect waves-light btn btn-choice">Stay in <span
+                                class='city'></span></button>
+                    </div>
                 </div>
+                <div class="col s3">
+                    <!-- placeholder for spacing -->
                 </div>
-            
-                <div class="col s3"></div>
-                <h5 id="city-error" class="footer hidden">Better double check that spelling!  Just major US cities, for now...</h5>
+                <h5 id="city-error" class="footer hidden">Better double check that spelling! Just major US cities, for
+                    now...</h5>
             </div>
         </div>
-        
     </section>
+    <!-- ======================  END VIEW_2 CONTENT - CITY PICKER =====================  -->
 
-        <section id="v3" class="view">
-            <h1 class="cursive">Events</h1>
-            <h5>Find awesome events for your date in <span class="city"></span>!</h5>
-            <div id="btn-events">
-                <!-- some options to set up our tickermaster api call -->
-                <button class="btn-events waves-effect waves-light btn">music</button>
-                <button class="btn-events waves-effect waves-light btn">theater</button>
-                <button class="btn-events waves-effect waves-light btn">film</button>
-                <button class="btn-events waves-effect waves-light btn">festivals</button>
-                <button class="btn-events waves-effect waves-light btn">art</button>
-                <button class="btn-events waves-effect waves-light btn">dance</button>
-                <button class="btn-events waves-effect waves-light btn">sports</button>
-                <button class="btn-events waves-effect waves-light btn">comedy</button>
-            </div>
-        
+    <!-- ======================  BEGIN VIEW_3 CONTENT - EVENT SEARCH =====================  -->
+    <section id="v3" class="view">
+        <h1 class="cursive">Events</h1>
+        <h5>Find awesome events for your date in <span class="city"></span>!</h5>
+        <div id="btn-events">
+            <!-- some options to set up our tickermaster api call -->
+            <button class="btn-events waves-effect waves-light btn">music</button>
+            <button class="btn-events waves-effect waves-light btn">theater</button>
+            <button class="btn-events waves-effect waves-light btn">film</button>
+            <button class="btn-events waves-effect waves-light btn">festivals</button>
+            <button class="btn-events waves-effect waves-light btn">art</button>
+            <button class="btn-events waves-effect waves-light btn">dance</button>
+            <button class="btn-events waves-effect waves-light btn">sports</button>
+            <button class="btn-events waves-effect waves-light btn">comedy</button>
+        </div>
+
         </div>
         <hr style="margin: 2em">
         <!-- show us the events -->
-        <div class="testContainer container-fluid" style="padding: 0; text-align: center">
-            <div id="eventsList" class="row" style="margin: auto">
+        <div class="container-fluid" style="padding: 0; text-align: center">
+            <div id="eventsList" class="row" style="padding: 2em">
                 <!-- show events here -->
             </div>
         </div>
     </section>
+    <!-- ======================  END VIEW_3 CONTENT - EVENT SEARCH =====================  -->
 
+    <!-- ======================  BEGIN VIEW_4 CONTENT - RESTAURANT PICKER =====================  -->
     <section id="v4" class="view">
-            <h1 class="cursive">Restaurants</h1>
-            <h5>Hungry? Check out these dining options near your event.</h5>
-            <div id="btn-events">
-                <!-- some options to set up our tickermaster api call for future versioning -->
-            </div>
-        
+        <h1 class="cursive">Restaurants</h1>
+        <h5>Hungry? Check out these dining options near your event.</h5>
+        <div id="btn-events">
+            <!-- some options to set up our tickermaster api call for future versioning -->
+        </div>
+
         </div>
         <hr style="margin: 2em">
         <!-- show us the events -->
         <div class="testContainer container-fluid" style="padding: 0; text-align: center">
-            <div id="restaurantList" class="row" style="margin: auto">
+            <div id="restaurantList" class="row" style="padding: 2em">
                 <!-- show events here -->
             </div>
         </div>
     </section>
+    <!-- ======================  END VIEW_4 CONTENT - RESTAURANT PICKER =====================  -->
 
+    <!-- ======================  BEGIN VIEW_5 CONTENT - SUMMARY =====================  -->
     <section id="v5" class="view">
-            <h1 class="cursive">The Perfect Pair</h1>
-            <h5>Ready for your date? Let's recap. </h5>
-        </div>
+        <h1 class="cursive">The Perfect Pair</h1>
+        <h5>Ready for your date? Let's review the details.</h5>
         <hr style="margin: 2em">
-       
-        <div class="testContainer container-fluid" style="padding: 0; text-align: center">
-            <div id="restaurantList" class="row" style="margin: auto">
-                <!-- show events here -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col 6">
+                    <h4 class="eventName1">Event Name</h4>
+                    <img src="" alt="" id="eventIMG1" style="height: 20em">
+                    <div id="eventVenue1">Venue</div>
+                    <div id="eventAddress1">Address</div>
+                    <div id="eventDate1">Date</div>
+                </div>
+                <div class="col 6">
+                    <h4 id="restName1">Restaurants</h4>
+                    <img src="" alt="" id="restIMG1" style="height: 20em">
+                    <div id="restAddress1">Address</div>
+                    <div id="restPhone1">Phone Number</div>
+                    <div id="restRating1">Rating</div>
+                    <div id="restPrice1">Price</div>
+                    <a href="" id="site1" target="blank">Visit Site</a>
+                </div>
             </div>
         </div>
     </section>
+    <!-- ======================  END VIEW_5 CONTENT - SUMMARY =====================  -->
 
-    <!-- view_3 - restaurants search screen -->
-    
+    <!-- =========== BEGIN MODAL/OVERLAYS (API LOADER, EVENT AND RESTAURANT MODALS) ========== -->
 
+    <!-- -------------------- Begin API Loader Overlay -------------------- -->
     <div class="overlay">
-            <h4 id="loaderText" class="loader">Loading something awesome...</h4>
+        <h4 id="loaderText" class="loader">Loading something awesome...</h4>
         <div style="min-width: 200px;">
             <div class="progress">
                 <div class="indeterminate"></div>
             </div>
-            
         </div>
     </div>
+    <!-- -------------------- End API Loader Overlay -------------------- -->
 
+    <!-- -------------------- Begin Event Detail Modal -------------------- -->
     <div id="modal1" class="modal">
         <div class="modal-content">
-
             <div id="eventModal">
                 <h4 id="eventName">Event Name</h4>
-                <img src="" alt="" id="eventIMG" style="width: 60%">
-                <div id="eventVenue">Venue</div>
-                <div id="eventDate">Date</div>
+                <img src="" alt="" id="eventIMG" style="max-height: 20em">
+                <h5 id="eventVenue">Venue</h5>
                 <div id="eventAddress">Address</div>
+                <div id="eventDate">Date</div>
             </div>
             <div class="modal-footer">
-                <a id="eventSelect" href="#!" class="modal-close waves-effect waves-green btn-flat">Select Event</a>
-                <a id="tix" href="#!" target="_blank" class="waves-effect waves-green btn-flat">Get Tix</a>
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                <a id="eventSelect" href="#!"
+                    class="modal-close waves-effect waves-green btn-flat hvr-shutter-out-horizontal btn-modal">Select</a>
+                <a id="tix" href="#!" target="_blank"
+                    class="waves-effect waves-green btn-flat hvr-shutter-out-horizontal btn-modal">Tickets</a>
+                <a href="#!"
+                    class="modal-close waves-effect waves-green btn-flat hvr-shutter-out-horizontal btn-modal">Close</a>
             </div>
         </div>
     </div>
+    <!-- -------------------- End Event Detail Modal -------------------- -->
 
+    <!-- -------------------- Begin Restaurant Detail Modal -------------------- -->
     <div id="modal2" class="modal">
-            <div class="modal-content">
-    
-                <div id="restModal">
-                    <h4 id="restName">Restaurants</h4>
-                    <img src="" alt="" id="restIMG" style="width: 60%">
-                    <div id="restAddress">Address</div>
-                    <div id="restPhone">Phone Number</div>
-                    <div id="restRating">Rating</div>
-                    <div id="restPrice">Price</div>
-                </div>
-                <div class="modal-footer">
-                    <a id="restSelect" href="#!" class="modal-close waves-effect waves-green btn-flat">Select Restaurant</a>
-                    <a id="site" href="#!" target="_blank" class="waves-effect waves-green btn-flat">Yelp</a>
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-                </div>
+        <div class="modal-content">
+            <div id="restModal">
+                <h4 id="restName">Restaurants</h4>
+                <img src="" alt="" id="restIMG" style="max-height: 20em;">
+                <div id="restAddress">Address</div>
+                <div id="restPhone">Phone Number</div>
+                <div id="restRating">Rating</div>
+                <div id="restPrice">Price</div>
+            </div>
+            <div class="modal-footer">
+                <a id="restSelect" href="#!"
+                    class="modal-close waves-effect waves-green btn-flat hvr-shutter-out-horizontal btn-modal">Select</a>
+                <a id="site" href="#!" target="_blank"
+                    class="waves-effect waves-green btn-flat hvr-shutter-out-horizontal btn-modal">Yelp</a>
+                <a href="#!"
+                    class="modal-close waves-effect waves-green btn-flat hvr-shutter-out-horizontal btn-modal">Close</a>
             </div>
         </div>
+    </div>
+    <!-- -------------------- End Restaurant Detail Modal -------------------- -->
 
+    <!-- =========== END MODAL/OVERLAYS (API LOADER, EVENT AND RESTAURANT MODALS) ========== -->
 
-    <!--JavaScript at end of body for optimized loading-->
+    <!-- =========== BEGIN JAVASCRIPT SRC PATHS ========== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <!-- =========== END JAVASCRIPT SRC PATHS ========== -->
 
+    <!-- =========== BEGIN JAVASCRIPT MODAL INITIALIZER ========== -->
     <script>
         // Initialize Modals
         $(document).ready(function () {
-            $('.modal').modal();
+            
         });
     </script>
+    <!-- =========== END JAVASCRIPT MODAL INITIALIZER ========== -->
+
+    <!-- ########## THAT'S ALL FOLKS! ########## -->
 </body>
 
 </html>
-

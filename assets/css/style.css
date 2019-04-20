@@ -51,23 +51,39 @@ h1 {
 }
 
 #v2 {
+    display: none;
     transition: ease-in;
     transition-duration: .3s;
     transition-delay: .5s;
 }
 
 #v3 {
+    display: none;
     padding: 5% 0 0 0;
-    opacity: 0.2;
-    transition: ease-in;
+    opacity: 0.1;
     transition-duration: 1s;
-    transition-delay: 1s;
+    transition-delay: .4s;
     background: lightcoral;
     color: white;
 }
 
 #v4 {
+    display: none;
     padding: 5% 0 0 0;
+}
+
+#v5 {
+    opacity: 0;
+    display: none;
+    padding: 5% 0 0 0;
+    transition: 1s;
+    transition-delay: .5s;
+}
+
+.btn-choice {
+    border-radius: 3em;
+    min-width: 6em;
+    margin: .25em;
 }
 
 #tagLine {
@@ -85,7 +101,7 @@ h1 {
 }
 
 #city-name {
-    padding: 0 0 2.5em 0;
+    padding: 0 0 2em 0;
 }
 
 #city-opt2 {
@@ -94,7 +110,7 @@ h1 {
 
 #city-input {
     max-width: 500px;
-    font-size: 1.5em;
+    font-size: 1.25em;
     color: lightcoral;
 }
 
@@ -103,9 +119,9 @@ h1 {
     opacity: 0;
 }
 
-.display-none {
+/* .display-none {
     display: none;
-}
+} */
 
 .visible {
     opacity: 1;
@@ -121,16 +137,6 @@ h1 {
 
 #event {
     transition-delay: 1s;
-}
-
-.testContainer {
-
-    padding: 5%;
-    margin: 1em;
-}
-
-.image {
-    max-height: 3em;
 }
 
 .overlay {
@@ -160,33 +166,42 @@ h1 {
     min-width: 6em;
 }
 
-
-/* .btn-events:focus {
-    background: orangered;
-} */
-
-#eventsList {
-    max-width: 70%;
+.btn-events:hover {
+    color: white;
 }
 
-.eventCard {
-    font-size: 1.15em;
-    margin: .25em 0 .25em 0;
-    padding: 0.75em;
-    height: 2.5em;
+.btn-events:focus {
+    background: lightseagreen;
+    color: white;
+}
+
+.events-rests {
+    font-size: 1em;
+    padding: 1em;
+    height: 5em;
     background: white;
-    border: none;
+    border: 2px solid lightcoral;
     transition: .4s;
-    border-radius: 3em;
     color: black;
 }
 
-.eventCard:hover {
+.events-rests:hover {
     transition: .4s;
-    cursor: pointer; 
-    border-radius: 3em;
+    cursor: pointer;
+    color: white;
 }
 
-.hvr-shutter-out-horizontal {
-    border-radius: 3em;
+.restCard {
+    border: 2px solid white;
+    background: lightgray;
+}
+
+.btn-modal {
+    font-size: 1em;
+    transition: .3s;
+    background: lightgrey;
+}
+
+.btn-modal:hover {
+    color: white;
 }
