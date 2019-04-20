@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="assets/css/magic/magic.css">
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Thasadith|Varela+Round" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/hover.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -23,7 +24,7 @@
     <section id="v1" class="view vh100">
         <div class="container-fluid">
             <div class="row">
-                <h1 class="cursive">Shrug</h1>
+                <h1 id="logo" class="cursive">Shrug</h1>
                 <h3 id="tagLine">Date Planning for the Indecisive</h3>
             </div>
             <div class="row">
@@ -69,25 +70,55 @@
     </section>
 
         <section id="v3" class="view">
-            <h1><span class="city"></span> Events</h1>
+            <h1 class="cursive">Events</h1>
+            <h5>Find awesome events for your date in <span class="city"></span>!</h5>
             <div id="btn-events">
                 <!-- some options to set up our tickermaster api call -->
                 <button class="btn-events waves-effect waves-light btn">music</button>
                 <button class="btn-events waves-effect waves-light btn">theater</button>
                 <button class="btn-events waves-effect waves-light btn">film</button>
-                <button class="btn-events waves-effect waves-light btn">science</button>
+                <button class="btn-events waves-effect waves-light btn">festivals</button>
                 <button class="btn-events waves-effect waves-light btn">art</button>
                 <button class="btn-events waves-effect waves-light btn">dance</button>
                 <button class="btn-events waves-effect waves-light btn">sports</button>
-                <button id="eventSearch" class="waves-effect waves-light btn">Go</button>
+                <button class="btn-events waves-effect waves-light btn">comedy</button>
             </div>
-            <!-- submit button -->
-            <div style="margin-top: 2em"></div>
+        
         </div>
-        <hr>
+        <hr style="margin: 2em">
         <!-- show us the events -->
         <div class="testContainer container-fluid" style="padding: 0; text-align: center">
             <div id="eventsList" class="row" style="margin: auto">
+                <!-- show events here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="v4" class="view">
+            <h1 class="cursive">Restaurants</h1>
+            <h5>Hungry? Check out these dining options near your event.</h5>
+            <div id="btn-events">
+                <!-- some options to set up our tickermaster api call for future versioning -->
+            </div>
+        
+        </div>
+        <hr style="margin: 2em">
+        <!-- show us the events -->
+        <div class="testContainer container-fluid" style="padding: 0; text-align: center">
+            <div id="restaurantList" class="row" style="margin: auto">
+                <!-- show events here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="v5" class="view">
+            <h1 class="cursive">The Perfect Pair</h1>
+            <h5>Ready for your date? Let's recap. </h5>
+        </div>
+        <hr style="margin: 2em">
+       
+        <div class="testContainer container-fluid" style="padding: 0; text-align: center">
+            <div id="restaurantList" class="row" style="margin: auto">
                 <!-- show events here -->
             </div>
         </div>
@@ -97,7 +128,7 @@
     
 
     <div class="overlay">
-            <h4 id="loaderText" class="loader" >Loading something awesome...</h4>
+            <h4 id="loaderText" class="loader">Loading something awesome...</h4>
         <div style="min-width: 200px;">
             <div class="progress">
                 <div class="indeterminate"></div>
@@ -110,7 +141,7 @@
         <div class="modal-content">
 
             <div id="eventModal">
-                <h6 id="eventName">Event Name</h6>
+                <h4 id="eventName">Event Name</h4>
                 <img src="" alt="" id="eventIMG" style="width: 60%">
                 <div id="eventVenue">Venue</div>
                 <div id="eventDate">Date</div>
@@ -124,28 +155,25 @@
         </div>
     </div>
 
+    <div id="modal2" class="modal">
+            <div class="modal-content">
+    
+                <div id="restModal">
+                    <h4 id="restName">Restaurants</h4>
+                    <img src="" alt="" id="restIMG" style="width: 60%">
+                    <div id="restAddress">Address</div>
+                    <div id="restPhone">Phone Number</div>
+                    <div id="restRating">Rating</div>
+                    <div id="restPrice">Price</div>
+                </div>
+                <div class="modal-footer">
+                    <a id="restSelect" href="#!" class="modal-close waves-effect waves-green btn-flat">Select Restaurant</a>
+                    <a id="site" href="#!" target="_blank" class="waves-effect waves-green btn-flat">Yelp</a>
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                </div>
+            </div>
+        </div>
 
-    <button id="yelp">yelp</button>
-    <!-- just some neat placeholder buttons to test 
-        <div class="row iconRow" id="menu1">
-            <div class="col s4 l4 icons">
-                <button id="dining"
-                    class="btn-floating btn-large waves-effect waves-light menu1-btn scale-transition scale-out"> <i
-                        class="fas fa-utensils"></i>
-                </button>
-            </div>
-            <div class="col s4 l4 icons">
-                <button id="movie"
-                    class="btn-floating btn-large waves-effect waves-light menu1-btn scale-transition scale-out"> <i
-                        class="fas fa-film"></i> </button>
-            </div>
-            <div class="col s4 l4  icons">
-                <button id="event"
-                    class="btn-floating btn-large waves-effect waves-light menu1-btn scale-transition scale-out"> <i
-                        class="fas fa-ticket-alt"></i>
-                </button>
-            </div>
-        </div> -->
 
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -153,7 +181,7 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-        // Or with jQuery
+        // Initialize Modals
         $(document).ready(function () {
             $('.modal').modal();
         });
@@ -162,5 +190,3 @@
 
 </html>
 
-
-<!-- Compiled and minified JavaScript -->

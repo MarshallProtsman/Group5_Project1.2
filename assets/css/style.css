@@ -14,9 +14,23 @@ body {
     /* font-family: 'Quicksand', sans-serif; */
 }
 
-h1 {
-    font-size: 8em;
+.cursive {
     font-family: 'Pacifico', cursive;
+}
+
+.progress {
+    max-width: 500px;
+    width: 80%;
+    margin: auto;
+}
+
+h1 {
+    font-size: 6em;
+    font-family: 'Pacifico', cursive;
+}
+
+#logo {
+    font-size: 8em;
 }
 
 .view {
@@ -46,10 +60,15 @@ h1 {
     padding: 5% 0 0 0;
     opacity: 0.2;
     transition: ease-in;
-    transition-duration: .3s;
-    transition-delay: .5s;
+    transition-duration: 1s;
+    transition-delay: 1s;
+    background: lightcoral;
+    color: white;
 }
 
+#v4 {
+    padding: 5% 0 0 0;
+}
 
 #tagLine {
     margin: 1em 0 0 0;
@@ -133,35 +152,41 @@ h1 {
 }
 
 .btn-events {
-    /* background: none; */
+    background: white;
+    color: black;
     transition: .5s;
+    margin: 0.25em;
+    border-radius: 3em;
+    min-width: 6em;
 }
 
-.btn-events-active {
-    background: lightcoral;
-}
 
 /* .btn-events:focus {
     background: orangered;
 } */
 
-/* #eventsList {
-    
-} */
+#eventsList {
+    max-width: 70%;
+}
 
 .eventCard {
-    font-size: 1em;
-    margin: 1em 0 1em 0;
-    padding: 1em 0 1em 0;
-    height: 4em;
-    font-size: 1.2em;
-    background: none;
+    font-size: 1.15em;
+    margin: .25em 0 .25em 0;
+    padding: 0.75em;
+    height: 2.5em;
+    background: white;
     border: none;
     transition: .4s;
-
+    border-radius: 3em;
+    color: black;
 }
 
 .eventCard:hover {
-    color: white;
-    background: black;
+    transition: .4s;
+    cursor: pointer; 
+    border-radius: 3em;
+}
+
+.hvr-shutter-out-horizontal {
+    border-radius: 3em;
 }
