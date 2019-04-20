@@ -15,9 +15,19 @@ $(document).ready(function () {
   let eventKeyword = '' // keyword for event search
   let loaderText = ''; // changes with each API call to give user feedback
 
+  console.log('- - - - - - - - - - - - - - - - - - - - ');
+  console.log("Big shoutout to team $('.group').on('click') for the Yelp help :)");
 
   $('.modal').modal(); // intializing modals
 
+  let pictures = ['/assets/img/date1.jpg', '/assets/img/date2.jpg', '/assets/img/date3.jpg'];
+  
+  // for (z = 0; z < pictures.length; z++) {
+  //   console.log(pictures.length)
+  //   setInterval(function() {
+  //     $('#v1').css('background-image', 'url(' + pictures[z] + ')');
+  //   },2000);
+  // };
   /* ----------------------------------------------------------------------------------- */
   // --------------------------------- FIRE FIRE FIRE ---------------------------------- //
   /* ----------------------------------------------------------------------------------- */
@@ -34,7 +44,8 @@ $(document).ready(function () {
 
   let database = firebase.database();
 
-  console.log(firebase);
+  console.log('- - - - - - - - - - - - - - - - - - - - ');
+  console.log('Firebase Initialized - woot!');
 
   var ref = database.ref('rest')
 
@@ -434,10 +445,11 @@ $(document).ready(function () {
     console.log('Updating view to Summary.');
 
     data = restResponse.businesses[restResponsePosition]; // set restaurant to var for firebase
-  
+
     ref.push(data); // push to firebase
 
-    console.log(data);
+    console.log('- - - - - - - - - - - - - - - - - - - - ');
+    console.log('Restaurant data saved to Firebase');
   });
   // ========== BEGIN - CLICK EVENT - Restaurant Modal and Restaurant Selection ========== 
 

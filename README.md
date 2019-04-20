@@ -20,6 +20,8 @@ yelp - used to populate a list of restaurants near the users event selection (la
 materialize.css - basic responsive layout and some transition effects
 hover.css - dedicated css library for hover effects
 jquery - dom manipulation and view management 
+fontawesome - icon library
+googlefonts - font library
 
 # Future Versioning - Enhancements and Features
 - User account and login validation via firebase (to store history, favorite restaurants, leave reviews, etc.)
@@ -29,13 +31,16 @@ jquery - dom manipulation and view management
 - Date Picker and date-based functionality 
 - In-app purchase of event tickets (or a more integrated functionaliy eliminating the need to leave the app/site)
 - Google Maps integration (distance from event to restaurant is already here - we want advanced functionality like showing the map and directions)
-- Advanced animations/transitions and a smoother UI (android-like)
+- Advanced animations/transitions and a smoother UI (android-like) - css keyframes and/or anime.js
+- rotating background imgs (close but couldn't quite get it working)    
 
+github link: 
+github pages link: 
 ====================================================================================
 
 # Application Flow and Features
 
-
+- fill in dood!
 
 
 
